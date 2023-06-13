@@ -26,3 +26,5 @@ interface ApiClient {
         @Field("password") password: String,
     ): Call<ResponseLogin>
 }
+
+enum class ApiStatus { LOADING, SUCCESS, FAILED }

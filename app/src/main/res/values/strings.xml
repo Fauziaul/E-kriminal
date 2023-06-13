@@ -6,12 +6,13 @@
     <string name="no_hp">No. Hp</string>
     <string name="btn_login">Login</string>
     <string name="btn_regis">Register</string>
-    <string name="txt_option_register">Belum Mempunyai Akun? Regiter Disini</string>
+    <string name="txt_option_register">Belum Mempunyai Akun? Register Disini</string>
 
     <string name="txt_titleR">Silahkan Lengkapi Form Di Bawah</string>
     <string name="nama">Nama</string>
     <string name="btn_register">Register</string>
-    <string name="txt_option_login">Sudah Mempunyai Akun? Login Disini</string>
+    <string name="txt_option">Sudah Mempunyai Akun?</string>
+    <string name="txt_option_login">Login disini</string>
     <string name="password">Password</string>
     <string name="title_activity_beranda">BerandaActivity</string>
     <string name="title_home">Home</string>

@@ -1,25 +1,30 @@
 package org.d3if0097.pt2
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import org.d3if0097.pt2.databinding.FragmentRegisterBinding
 import org.d3if0097.pt2.model.ResponseLogin
 import org.d3if0097.pt2.model.ResponseRegister
 import org.d3if0097.pt2.network.RetrofitClient
+import org.d3if0097.pt2.ui.profile.ProfileFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class RegisterActivity : AppCompatActivity() {
-    private var binding: FragmentRegisterBinding? = null
+    private var binding: FragmentRegisterBinding ?= null
+    private lateinit var auth: FirebaseAuth
     private var email: String = " "
     private var username: String = " "
     private var phone: String = " "
     private var password: String = " "
+
 
     //    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,11 +32,18 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.fragment_register)
         binding = FragmentRegisterBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
+        auth = FirebaseAuth.getInstance()
+
+        binding!!.txtOptionLogin.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
         binding!!.btnRegister.setOnClickListener {
-            email = binding!!.txtEmailInput.text.toString()
+            email = binding!!.txtEmailInput.text.toString().trim()
             username = binding!!.txtNamaInput.text.toString()
             phone = binding!!.txtPhone.text.toString()
-            password = binding!!.txtKonfirmPasword.text.toString()
+            password = binding!!.txtKonfirmPasword.text.toString().trim()
+
 
             when {
                 email == "" -> {
@@ -47,9 +59,23 @@ class RegisterActivity : AppCompatActivity() {
                     binding!!.txtKonfirmPasword.error = "Password Tidak Boleh Kosong"
                 }
             }
+            registerUser(email, password)
         }
     }
+
+    private fun registerUser(email: String, password:String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) {
+                if (it.isSuccessful) {
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    Toast.makeText(this, "Registrasi Berhasil!", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
 }
+
 //            else -> {
 //                    binding!!.loading.visibility = View.VISIBLE
 //                    getData()
