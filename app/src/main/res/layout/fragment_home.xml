@@ -13,7 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="938dp"
         android:orientation="vertical"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -114,8 +117,8 @@
                     android:layout_height="116dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="24dp"
-                    android:text="Lapor Kriminal"
                     android:backgroundTint="@color/black"
+                    android:text="Lapor Kriminal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -124,8 +127,8 @@
                     android:layout_width="120dp"
                     android:layout_height="116dp"
                     android:layout_marginEnd="32dp"
-                    android:text="Lapor Aspirasi"
                     android:backgroundTint="@color/black"
+                    android:text="Lapor Aspirasi"
                     app:layout_constraintBottom_toBottomOf="@+id/btnLapor"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/btnLapor" />

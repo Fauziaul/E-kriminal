@@ -28,7 +28,7 @@ class HistoriFragment : Fragment() {
         _binding = FragmentHistoriBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHistori
+        val textView: TextView = binding.emptyView
         notificationsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }

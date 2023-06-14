@@ -9,7 +9,14 @@
         android:id="@+id/navigation_home"
         android:name="org.d3if0097.pt2.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_aspirasiFragment"
+            app:destination="@id/aspirasiFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_laporFragment"
+            app:destination="@id/laporFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_history"
@@ -22,4 +29,14 @@
         android:name="org.d3if0097.pt2.ui.histori.HistoriFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/aspirasiFragment"
+        android:name="org.d3if0097.pt2.ui.aspirasi.AspirasiFragment"
+        android:label="@string/title_aspirasi"
+        tools:layout="@layout/fragment_aspirasi"/>
+    <fragment
+        android:id="@+id/laporFragment"
+        android:name="org.d3if0097.pt2.ui.lapor.LaporFragment"
+        android:label="@string/title_lapor"
+        tools:layout="@layout/fragment_lapor"/>
 </navigation>
