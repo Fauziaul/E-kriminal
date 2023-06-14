@@ -20,13 +20,13 @@
 
     <fragment
         android:id="@+id/navigation_history"
-        android:name="org.d3if0097.pt2.ui.profile.ProfileFragment"
+        android:name="org.d3if0097.pt2.ui.histori.HistoriFragment"
         android:label="@string/title_history"
         tools:layout="@layout/fragment_histori" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="org.d3if0097.pt2.ui.histori.HistoriFragment"
+        android:name="org.d3if0097.pt2.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment

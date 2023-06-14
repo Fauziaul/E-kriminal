@@ -21,7 +21,6 @@ import org.d3if0097.pt2.ui.home.HomeFragment
 class BerandaActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityBerandaBinding
-    private lateinit var auth: FirebaseAuth
     private lateinit var navController: NavController
 
 
@@ -30,10 +29,30 @@ class BerandaActivity : AppCompatActivity() {
 
         binding = ActivityBerandaBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        auth = FirebaseAuth.getInstance()
+
 
         navController= Navigation.findNavController(this,R.id.nav_host_fragment_activity_beranda)
         setupWithNavController(binding.navView,navController)
+
+//        val navigationView = binding.navView
+
+//        navigationView.setOnNavigationItemSelectedListener { menuItem ->
+//            when (menuItem.itemId) {
+//                R.id.navigation_home -> {
+//                    // Handle home item selection
+//                    true
+//                }
+//                R.id.navigation_history -> {
+//                    // Handle dashboard item selection
+//                    true
+//                }
+//                R.id.navigation_profile -> {
+//                    // Handle notifications item selection
+//                    true
+//                }
+//                else -> false
+//            }
+//        }
 
 //        val navView: BottomNavigationView = binding.navView
 //
